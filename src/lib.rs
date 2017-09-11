@@ -34,7 +34,8 @@ use std::path::Path;
 use std::rc::Rc;
 use rand::{Rng, thread_rng};
 
-pub mod arc;
+mod arc;
+pub use arc::ArcChain;
 
 
 /// The definition of all types that can be used in a Chain.
