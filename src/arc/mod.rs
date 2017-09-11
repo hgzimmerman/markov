@@ -2,7 +2,6 @@ use std::borrow::ToOwned;
 use std::collections::HashMap;
 use std::collections::hash_map::Entry::{Occupied, Vacant};
 use std::fs::File;
-use std::hash::Hash;
 use std::io::BufReader;
 use std::io::prelude::*;
 use std::iter::Map;
@@ -10,11 +9,7 @@ use std::path::Path;
 use std::sync::Arc;
 use rand::{Rng, thread_rng};
 
-
-
-/// The definition of all types that can be used in a Chain.
-pub trait Chainable: Eq + Hash {}
-impl<T> Chainable for T where T: Eq + Hash {}
+use super::Chainable;
 
 type ArcToken<T> = Option<Arc<T>>;
 
